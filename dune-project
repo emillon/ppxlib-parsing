@@ -17,6 +17,7 @@
  (name ppxlib-parsing)
  (synopsis "Copy of the ocaml parser that outputs a ppxlib AST")
  (depends
+  (ocaml (>= 4.06.0))
   (ppxlib
    (and
     (>= 0.15.0)
