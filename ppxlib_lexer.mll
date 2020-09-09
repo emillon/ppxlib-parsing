@@ -277,10 +277,9 @@ let prepare_error loc = function
       Location.errorf ~loc "Comment not terminated"
   | Unterminated_string ->
       Location.errorf ~loc "String literal not terminated"
-  | Unterminated_string_in_comment (_, literal_loc) ->
+  | Unterminated_string_in_comment (_, _literal_loc) ->
       Location.errorf ~loc
         "This comment contains an unterminated string literal"
-        ~sub:[Location.msg ~loc:literal_loc "String literal begins here"]
   | Keyword_as_label kwd ->
       Location.errorf ~loc
         "`%s' is a keyword, it cannot be used as label name" kwd

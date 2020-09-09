@@ -132,13 +132,9 @@ and pattern = wrap_menhir Parser.Incremental.parse_pattern
 let prepare_error err =
   let open Syntaxerr in
   match err with
-  | Unclosed(opening_loc, opening, closing_loc, closing) ->
+  | Unclosed(_opening_loc, _opening, closing_loc, closing) ->
       Location.errorf
         ~loc:closing_loc
-        ~sub:[
-          Location.msg ~loc:opening_loc
-            "This '%s' might be unmatched" opening
-        ]
         "Syntax error: '%s' expected" closing
 
   | Expecting (loc, nonterm) ->
@@ -151,9 +147,9 @@ let prepare_error err =
          are not supported when the option -no-app-func is set."
   | Variable_in_scope (loc, var) ->
       Location.errorf ~loc
-        "In this scoped type, variable %a \
+        "In this scoped type, variable ? \
          is reserved for the local type %s."
-        Pprintast.tyvar var var
+        var
   | Other loc ->
       Location.errorf ~loc "Syntax error"
   | Ill_formed_ast (loc, s) ->
