@@ -4,6 +4,8 @@
 
 (generate_opam_files true)
 
+(formatting disabled)
+
 (source
  (github emillon/ppxlib-parsing))
 
