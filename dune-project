@@ -13,4 +13,5 @@
 
 (package
  (name ppxlib-parsing)
- (synopsis "Copy of the ocaml parser that outputs a ppxlib AST"))
+ (synopsis "Copy of the ocaml parser that outputs a ppxlib AST")
+ (depends ppxlib menhirLib))
