@@ -8,6 +8,7 @@ bug-reports: "https://github.com/emillon/ppxlib-parsing/issues"
 depends: [
   "dune" {>= "2.7"}
   "ppxlib"
+  "menhir"
   "menhirLib"
   "odoc" {with-doc}
 ]
