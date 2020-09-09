@@ -23,6 +23,11 @@ open Ppxlib.Ast_helper
 open Ppxlib.Docstrings
 open Ppxlib.Docstrings.WithMenhir
 
+module Clflags = struct
+  let unsafe = ref false
+  let applicative_functors = ref true
+end
+
 let mkloc = Location.mkloc
 let mknoloc = Location.mknoloc
 
