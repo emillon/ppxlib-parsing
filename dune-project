@@ -16,4 +16,10 @@
 (package
  (name ppxlib-parsing)
  (synopsis "Copy of the ocaml parser that outputs a ppxlib AST")
- (depends ppxlib menhir menhirLib))
+ (depends
+  (ppxlib
+   (and
+    (>= 0.15.0)
+    (< 0.16.0)))
+  menhir
+  menhirLib))
